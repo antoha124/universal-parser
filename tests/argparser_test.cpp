@@ -5,10 +5,6 @@
 
 using namespace ArgumentParser;
 
-/*
-    Функция принимает в качество аргумента строку, разделяет ее по "пробелу"
-    и возвращает вектор полученных слов
-*/
 std::vector<std::string> SplitString(const std::string& str) {
     std::istringstream iss(str);
 
@@ -103,7 +99,7 @@ TEST(ArgParserTestSuite, MultiValueTest) {
 TEST(ArgParserTestSuite, MinCountMultiValueTest) {
     ArgParser parser("My Parser");
     std::vector<int> int_values;
-    size_t MinArgsCount = 10;
+    uint64_t MinArgsCount = 10;
     parser.AddIntArgument('p', "param1").MultiValue(MinArgsCount).StoreValues(int_values);
 
     ASSERT_FALSE(parser.Parse(SplitString("app --param1=1 --param1=2 --param1=3")));
