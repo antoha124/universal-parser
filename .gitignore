@@ -33,3 +33,5 @@
 /.idea
 /cmake-build-debug
 /_deps
+/.DS_Store
+/bin/.DS_Store
